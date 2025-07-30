@@ -13,7 +13,7 @@ function AdminDashboard() {
   useEffect(() => {
     if (activeTab === "orders") {
       axios
-        .get("/api/order/all", {
+        .get("http://localhost:5000/api/order/all", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => setOrders(res.data))
@@ -27,7 +27,7 @@ function AdminDashboard() {
   useEffect(() => {
     if (activeTab === "users") {
       axios
-        .get("/api/users", {
+        .get("http://localhost:5000/api/users", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => setUsers(res.data))
@@ -41,7 +41,7 @@ function AdminDashboard() {
   const handleStatusChange = (orderId, newStatus) => {
     axios
       .put(
-        `/api/order/${orderId}`,
+        `http://localhost:5000/api/order/${orderId}`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       )
