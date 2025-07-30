@@ -14,8 +14,7 @@ function ProductCategorySlider({ title, products }) {
     <div className="category-slider">
       <h2>{title}</h2>
 
-      {/* ✅ الأسهم برّه الـ Swiper */}
-      <div className={`custom-nav prev ${prevClass}`}></div>
+          <div className={`custom-nav prev ${prevClass}`}></div>
 
       <Swiper
         spaceBetween={20}
