@@ -9,7 +9,7 @@ function ProductListSwiper() {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/product`)
+      .get(`http://localhost:5000/api/product`)
       .then((res) => setProducts(res.data))
       .catch((err) => console.log(err));
   }, []);
