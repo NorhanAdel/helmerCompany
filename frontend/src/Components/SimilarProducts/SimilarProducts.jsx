@@ -7,7 +7,7 @@ function SimilarProducts({ category, currentId }) {
   const [related, setRelated] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/product").then((res) => {
+    axios.get("http://localhost:5000/api/product").then((res) => {
       const filtered = res.data.filter(
         (p) => p.category === category && p._id !== currentId
       );
