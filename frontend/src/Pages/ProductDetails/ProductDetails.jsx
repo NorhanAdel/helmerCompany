@@ -30,16 +30,16 @@ function ProductDetails() {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/product/${id}`)
+      .get(`http://localhost:5000/api/product/${id}`)
       .then((res) => setProduct(res.data));
-    axios.get(`${process.env.REACT_APP_API_URL}/api/product`).then((res) => setAllProducts(res.data));
+    axios.get(`http://localhost:5000/api/product`).then((res) => setAllProducts(res.data));
   }, [id]);
 
   const handleBuyNow = async () => {
     if (!token) return navigate("/login");
     try {
       await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/order/`,
+        `http://localhost:5000/api/order/`,
         { productId: product._id, quantity },
         { headers: { Authorization: `Bearer ${token}` } }
       );
