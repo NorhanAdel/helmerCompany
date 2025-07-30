@@ -1,6 +1,6 @@
-import v1 from "../../src/Assets/pexels-luna-lovegood-4473181-3840x2160-50fps.mp4" 
-import v2 from "../../src/Assets/pexels-pressmaster-3196176-3840x2160-25fps.mp4"; 
-import v3 from "../../src/Assets/pexels-luna-lovegood-4474373-3840x2160-50fps.mp4"; 
+import v1 from "../../src/Assets/video_2025-07-30_09-58-26.mp4";
+import v2 from "../../src/Assets/c.mp4";
+import v3 from "../../src/Assets/cc.mp4";
 
 export const slides = [
   {
