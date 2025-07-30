@@ -29,7 +29,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/checkout" element={<Checkout />} />
@@ -44,7 +44,7 @@ function App() {
           <Route path="/admin/*" element={<Navigate to="/" />} />
         )}
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/product" element={<ProductList />} />
+        <Route path="/products" element={<ProductList />} />
         <Route path="/offer" element={<OffersPage />} />
         <Route path="/account" element={<Account />} />
         <Route path="/myorders" element={<MyOrders />} />
