@@ -9,7 +9,7 @@ function MyOrders() {
 
   useEffect(() => {
     axios
-      .get("/api/order/my-orders", {
+      .get("http://localhost:5000/api/order/my-orders", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
