@@ -14,7 +14,7 @@ function Cart() {
     if (!token) return navigate("/login");
 
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/cart`, {
+      .get(`http://localhost:5000/api/cart`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -29,7 +29,7 @@ function Cart() {
 
   const handleRemove = async (productId) => {
     await axios.delete(
-      `${process.env.REACT_APP_API_URL}/api/cart/${productId}`,
+      `http://localhost:5000/api/cart/${productId}`,
       {
         headers: { Authorization: `Bearer ${token}` },
       }
@@ -41,7 +41,7 @@ function Cart() {
   const handleQuantityChange = async (productId, newQty) => {
     if (newQty < 1) return;
 
-    await axios.put(`${process.env.REACT_APP_API_URL}/api/cart/${productId}`,
+    await axios.put(`http://localhost:5000/api/cart/${productId}`,
       { quantity: newQty },
       { headers: { Authorization: `Bearer ${token}` } }
     );
