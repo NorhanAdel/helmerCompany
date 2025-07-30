@@ -6,7 +6,7 @@ const OffersPage = () => {
   const [offers, setOffers] = useState([]);
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}/api/offers`).then((res) => setOffers(res.data));
+    axios.get(`http://localhost:5000/api/offers`).then((res) => setOffers(res.data));
   }, []);
 
   return (
