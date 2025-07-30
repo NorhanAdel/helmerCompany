@@ -18,7 +18,7 @@ function Checkout() {
   useEffect(() => {
     if (!token) return navigate("/login");
 
-    axios.get(`${process.env.REACT_APP_API_URL}/api/cart`, {
+    axios.get(`http://localhost:5000/api/cart`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -42,7 +42,7 @@ function Checkout() {
       }));
 
       const res = await axios.post(
-        "/api/order",
+        "http://localhost:5000/api/order",
         {
           products: formattedItems,
           shippingInfo: {
