@@ -16,7 +16,7 @@ import ProductCard from "../../Components/ProductCard/ProductCard";
 
    useEffect(() => {
      axios
-       .get(`/api/product`)
+       .get(`http://localhost:5000/api/product`)
        .then((res) => setProducts(res.data))
        .catch((err) => console.log(err));
    }, []);
