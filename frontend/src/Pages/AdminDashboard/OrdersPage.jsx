@@ -10,7 +10,7 @@ function OrdersPage() {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/order/all`, {
+      .get(`http://localhost:5000/api/order/all`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setOrders(res.data))
@@ -23,7 +23,7 @@ function OrdersPage() {
   const handleStatusChange = (orderId, newStatus) => {
     axios
       .put(
-        `${process.env.REACT_APP_API_URL}/api/order/${orderId}`,
+        `http://localhost:5000/api/order/${orderId}`,
         { status: newStatus },
         {
           headers: { Authorization: `Bearer ${token}` },
