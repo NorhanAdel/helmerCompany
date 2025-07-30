@@ -8,7 +8,7 @@ function UsersPage() {
 
   useEffect(() => {
     axios
-      .get("/api/users", {
+      .get("http://localhost:5000/api/users", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setUsers(res.data))
@@ -21,7 +21,7 @@ function UsersPage() {
   const handleDelete = (id) => {
     if (window.confirm("هل أنت متأكد من حذف هذا المستخدم؟")) {
       axios
-        .delete(`/api/users/${id}`, {
+        .delete(`http://localhost:5000/api/users/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then(() => setUsers(users.filter((u) => u._id !== id)));
