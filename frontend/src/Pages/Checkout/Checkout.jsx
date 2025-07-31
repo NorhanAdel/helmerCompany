@@ -18,7 +18,7 @@ function Checkout() {
   useEffect(() => {
     if (!token) return navigate("/login");
 
-    axios.get(`http://localhost:5000/api/cart`, {
+    axios.get(`helmer-backend-production.up.railway.app/api/cart`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -42,7 +42,7 @@ function Checkout() {
       }));
 
       const res = await axios.post(
-        "http://localhost:5000/api/order",
+        "helmer-backend-production.up.railway.app/api/order",
         {
           products: formattedItems,
           shippingInfo: {
