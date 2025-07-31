@@ -6,7 +6,7 @@ const OffersPage = () => {
   const [offers, setOffers] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/offers`).then((res) => setOffers(res.data));
+    axios.get(`helmer-backend-production.up.railway.app/api/offers`).then((res) => setOffers(res.data));
   }, []);
 
   return (
