@@ -9,7 +9,7 @@ function ProductListSwiper() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/product`)
+      .get(`https://helmer-backend-production.up.railway.app/api/product`)
       .then((res) => setProducts(res.data))
       .catch((err) => console.log(err));
   }, []);
