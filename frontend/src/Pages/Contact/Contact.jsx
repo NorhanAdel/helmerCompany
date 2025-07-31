@@ -13,7 +13,7 @@ function ContactUs() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/contact", {
+      await axios.post("helmer-backend-production.up.railway.app/api/contact", {
         name,
         email,
         subject,
