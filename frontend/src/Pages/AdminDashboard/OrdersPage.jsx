@@ -10,7 +10,7 @@ function OrdersPage() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/order/all`, {
+      .get(`helmer-backend-production.up.railway.app/api/order/all`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setOrders(res.data))
@@ -23,7 +23,7 @@ function OrdersPage() {
   const handleStatusChange = (orderId, newStatus) => {
     axios
       .put(
-        `http://localhost:5000/api/order/${orderId}`,
+        `helmer-backend-production.up.railway.app/api/order/${orderId}`,
         { status: newStatus },
         {
           headers: { Authorization: `Bearer ${token}` },
