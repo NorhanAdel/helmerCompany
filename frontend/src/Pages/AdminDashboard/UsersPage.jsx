@@ -8,7 +8,7 @@ function UsersPage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/users", {
+      .get("helmer-backend-production.up.railway.app/api/users", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setUsers(res.data))
@@ -21,7 +21,7 @@ function UsersPage() {
   const handleDelete = (id) => {
     if (window.confirm("هل أنت متأكد من حذف هذا المستخدم؟")) {
       axios
-        .delete(`http://localhost:5000/api/users/${id}`, {
+        .delete(`helmer-backend-production.up.railway.app/api/users/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then(() => setUsers(users.filter((u) => u._id !== id)));
