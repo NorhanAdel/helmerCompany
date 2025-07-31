@@ -14,7 +14,7 @@ function Cart() {
     if (!token) return navigate("/login");
 
     axios
-      .get(`http://localhost:5000/api/cart`, {
+      .get(`helmer-backend-production.up.railway.app/api/cart`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -29,7 +29,7 @@ function Cart() {
 
   const handleRemove = async (productId) => {
     await axios.delete(
-      `http://localhost:5000/api/cart/${productId}`,
+      `helmer-backend-production.up.railway.app/api/cart/${productId}`,
       {
         headers: { Authorization: `Bearer ${token}` },
       }
@@ -41,7 +41,7 @@ function Cart() {
   const handleQuantityChange = async (productId, newQty) => {
     if (newQty < 1) return;
 
-    await axios.put(`http://localhost:5000/api/cart/${productId}`,
+    await axios.put(`helmer-backend-production.up.railway.app/api/cart/${productId}`,
       { quantity: newQty },
       { headers: { Authorization: `Bearer ${token}` } }
     );
