@@ -13,7 +13,7 @@ function AdminDashboard() {
   useEffect(() => {
     if (activeTab === "orders") {
       axios
-        .get("http://localhost:5000/api/order/all", {
+        .get("helmer-backend-production.up.railway.app/api/order/all", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => setOrders(res.data))
@@ -27,7 +27,7 @@ function AdminDashboard() {
   useEffect(() => {
     if (activeTab === "users") {
       axios
-        .get("http://localhost:5000/api/users", {
+        .get("helmer-backend-production.up.railway.app/api/users", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => setUsers(res.data))
@@ -41,7 +41,7 @@ function AdminDashboard() {
   const handleStatusChange = (orderId, newStatus) => {
     axios
       .put(
-        `http://localhost:5000/api/order/${orderId}`,
+        `helmer-backend-production.up.railway.app/api/order/${orderId}`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       )
